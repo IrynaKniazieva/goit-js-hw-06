@@ -36,9 +36,16 @@ const images = [
 
 // console.log(galleryEl);
 
-for(const image of images) {
-  const galleryEl = document.querySelector('.gallery');
-  galleryEl.insertAdjacentHTML('afterbegin', `<li class="gallery-item"> <img class="gallery-img" src = '${image.url}' alt = '${image.alt}' ></img> </li>`);
+// for добавляет поочереди
+// for(const image of images) {
+//   const galleryEl = document.querySelector('.gallery');
+//   galleryEl.insertAdjacentHTML('afterbegin', `<li class="gallery-item"> <img class="gallery-img" src = '${image.url}' alt = '${image.alt}' ></img> </li>`);
+//   console.log(galleryEl);
+// }
+// 
 
-}
- 
+const galleryEl = document.querySelector('.gallery');
+const makeGallery = images.map(image => `<li class="gallery-item"> <img class="gallery-img" src = '${image.url}' alt = '${image.alt}' ></img> </li>`)
+galleryEl.insertAdjacentHTML('afterbegin', makeGallery);
+
+console.log(galleryEl);

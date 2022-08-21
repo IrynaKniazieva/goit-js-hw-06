@@ -4,9 +4,15 @@ const spanEl = document.querySelector('#text');
 console.log(inputEl);
 console.log(spanEl);
 
+spanEl.style.fontSize = inputEl.value + 'px';
+
 inputEl.addEventListener('input',onChangeFont);
 
+// function onChangeFont() {
+//     text.style.fontSize = inputEl.value + 'px'
+// }
+
 function onChangeFont() {
-    text.style.fontSize = inputEl.value + 'px'
+    spanEl.style.fontSize = inputEl.value + 'px';
 }
 
